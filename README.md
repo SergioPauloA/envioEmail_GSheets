@@ -1,119 +1,119 @@
-# Gmail & Google Sheets Integration System 📧
+# Sistema de Integração Gmail e Google Sheets 📧
 
-A robust automation solution designed to streamline email management by seamlessly connecting **Gmail** with **Google Sheets** through **Google Apps Script**. This system enables users to centralize email tracking, organization, and automated response handling within a spreadsheet interface.
-
----
-
-## **Overview**
-
-This integration tool provides a comprehensive workflow for managing email communications directly from Google Sheets. By leveraging the power of Google Apps Script, it eliminates repetitive manual tasks and creates a unified dashboard for email operations.
-
-### **Key Capabilities**
-
-- **Automated Email Synchronization**: Retrieves and displays the most recent 10 emails from your Gmail inbox, populating structured data fields including message ID, subject line, sender information, and current status
-- **Streamlined Response Management**:  Enables direct email replies through the spreadsheet interface by simply filling in the designated response column
-- **Intelligent Send Control**: Implements status tracking to prevent duplicate responses and maintain communication integrity
-- **Custom Spreadsheet Menu**: Integrates intuitive menu commands directly into Google Sheets: 
-  - **Sync Emails**: Refreshes the spreadsheet with latest Gmail data
-  - **Send Responses**: Processes and dispatches prepared replies with automatic status updates
+Uma solução robusta de automação projetada para otimizar o gerenciamento de e-mails, conectando perfeitamente o **Gmail** ao **Google Sheets** através do **Google Apps Script**. Este sistema permite aos usuários centralizar o rastreamento, organização e tratamento automatizado de respostas de e-mail dentro de uma interface de planilha.
 
 ---
 
-## **System Workflow**
+## **Visão Geral**
 
-### **1. Email Synchronization Process**
-Access the custom menu and select "Sync Emails" to import your latest Gmail messages.  The system automatically extracts relevant metadata and populates the spreadsheet with organized, actionable information.
+Esta ferramenta de integração oferece um fluxo de trabalho completo para gerenciar comunicações por e-mail diretamente do Google Sheets. Aproveitando o poder do Google Apps Script, elimina tarefas manuais repetitivas e cria um painel unificado para operações de e-mail.
 
-### **2. Composing Responses**
-Navigate to the **Response** column and enter your reply message for any email that has not been marked as **Responded**. Each row represents an individual email thread ready for engagement.
+### **Principais Recursos**
 
-### **3. Dispatching Replies**
-Select "Send Responses" from the custom menu to execute the send operation. The system will:
-- Transmit all prepared responses to their respective recipients
-- Update the status field to **Responded**
-- Record the timestamp of each sent message
-
----
-
-## **Critical Configuration:  V8 Runtime Requirement**
-
-**⚠️ Important**:  This project requires the V8 JavaScript runtime engine in Google Apps Script for proper execution. 
-
-### **Enabling V8 Runtime**
-1. Navigate to your Google Sheet and open the Apps Script editor:  **Extensions → Apps Script**
-2. In the left sidebar, select **Project Settings**
-3. Locate the **Google Apps Script runtime** section
-4. Enable **Chrome V8 runtime**
-5. Save your configuration before running any scripts
-
-> **Note**: The V8 engine is necessary to support modern JavaScript (ES6+) features used throughout this codebase.  Without it, the script will not execute correctly.
+- **Sincronização Automática de E-mails**: Recupera e exibe os 10 e-mails mais recentes da sua caixa de entrada do Gmail, preenchendo campos de dados estruturados incluindo ID da mensagem, linha de assunto, informações do remetente e status atual
+- **Gerenciamento Simplificado de Respostas**: Permite respostas diretas por e-mail através da interface da planilha, simplesmente preenchendo a coluna de resposta designada
+- **Controle Inteligente de Envio**: Implementa rastreamento de status para prevenir respostas duplicadas e manter a integridade da comunicação
+- **Menu Personalizado na Planilha**: Integra comandos intuitivos diretamente no Google Sheets: 
+  - **Sincronizar E-mails**: Atualiza a planilha com os dados mais recentes do Gmail
+  - **Enviar Respostas**: Processa e despacha respostas preparadas com atualizações automáticas de status
 
 ---
 
-## **Technology Stack**
+## **Fluxo de Trabalho do Sistema**
 
-- **Google Workspace APIs**:  Provides native integration between Gmail and Sheets platforms
-- **Google Apps Script**: Server-side JavaScript runtime environment for automation logic
-- **Modern JavaScript (ES6+)**: Implements object-oriented programming patterns for maintainable, scalable code architecture
+### **1. Processo de Sincronização de E-mails**
+Acesse o menu personalizado e selecione "Sincronizar E-mails" para importar suas mensagens mais recentes do Gmail.  O sistema extrai automaticamente metadados relevantes e preenche a planilha com informações organizadas e acionáveis.
 
----
+### **2. Composição de Respostas**
+Navegue até a coluna **Resposta** e insira sua mensagem de resposta para qualquer e-mail que não tenha sido marcado como **Respondido**. Cada linha representa uma thread de e-mail individual pronta para engajamento.
 
-## **Spreadsheet Schema**
-
-The automated system generates a structured data table with the following columns: 
-
-| Column | Description |
-|--------|-------------|
-| **ID** | Unique message identifier from Gmail |
-| **Subject** | Email subject line |
-| **Sender** | Original sender's email address |
-| **Recipient** | Destination email address |
-| **Snippet** | Preview excerpt from email body |
-| **Response** | User-inputted reply message |
-| **Date** | Timestamp of email receipt |
-| **Status** | Current state (Read/Responded) |
-| **Response Date** | Timestamp of reply transmission |
+### **3. Envio de Respostas**
+Selecione "Enviar Respostas" no menu personalizado para executar a operação de envio. O sistema irá:
+- Transmitir todas as respostas preparadas aos respectivos destinatários
+- Atualizar o campo de status para **Respondido**
+- Registrar o timestamp de cada mensagem enviada
 
 ---
 
-## **Implementation Guide**
+## **Configuração Crítica: Requisito do Runtime V8**
 
-### **Step-by-Step Setup**
+**⚠️ Importante**: Este projeto requer o motor de runtime JavaScript V8 no Google Apps Script para execução adequada.
 
-1. Create or open a Google Sheets document
-2. Access the script editor: **Extensions → Apps Script**
-3. Verify V8 runtime is enabled (see Configuration section above)
-4. Paste the provided source code into the editor
-5. Save the project with a descriptive name
-6. Refresh your spreadsheet to activate the custom menu
-7. Grant necessary permissions when prompted
-8. Begin using the automation features via the custom menu
+### **Habilitando o Runtime V8**
+1. Navegue até sua Planilha Google e abra o editor do Apps Script:  **Extensões → Apps Script**
+2. Na barra lateral esquerda, selecione **Configurações do projeto**
+3. Localize a seção **Runtime do Google Apps Script**
+4. Habilite o **Runtime Chrome V8**
+5. Salve sua configuração antes de executar quaisquer scripts
 
----
-
-## **Quick Start Template**
-
-To accelerate your setup process, a pre-configured spreadsheet template is available for immediate use. 
-
-📥 **[Access Template Spreadsheet](https://bit.ly/planilhaemailresponder)**
-
-This template includes pre-formatted columns and is optimized for seamless integration with the automation script.
+> **Observação**: O motor V8 é necessário para suportar recursos JavaScript modernos (ES6+) utilizados em todo este código.  Sem ele, o script não será executado corretamente.
 
 ---
 
-## **Best Practices**
+## **Stack Tecnológica**
 
-- **Review before sending**: Always verify response content before executing the send command
-- **Regular synchronization**: Periodically sync emails to maintain up-to-date information
-- **Status monitoring**: Check the status column to track communication history
-- **Backup data**: Maintain periodic backups of your spreadsheet for data safety
-
----
-
-## **Support & Contributions**
-
-For questions, issues, or enhancement suggestions, please engage through the appropriate channels.  Contributions that improve functionality, documentation, or user experience are welcomed. 
+- **APIs do Google Workspace**: Fornece integração nativa entre as plataformas Gmail e Sheets
+- **Google Apps Script**: Ambiente de runtime JavaScript server-side para lógica de automação
+- **JavaScript Moderno (ES6+)**: Implementa padrões de programação orientada a objetos para arquitetura de código escalável e manutenível
 
 ---
 
-**Built with ❤️ using Google Workspace automation tools**
+## **Estrutura da Planilha**
+
+O sistema automatizado gera uma tabela de dados estruturada com as seguintes colunas:
+
+| Coluna | Descrição |
+|--------|-----------|
+| **ID** | Identificador único da mensagem do Gmail |
+| **Assunto** | Linha de assunto do e-mail |
+| **Remetente** | Endereço de e-mail do remetente original |
+| **Destinatário** | Endereço de e-mail de destino |
+| **Snippet** | Trecho de visualização do corpo do e-mail |
+| **Resposta** | Mensagem de resposta inserida pelo usuário |
+| **Data** | Timestamp de recebimento do e-mail |
+| **Status** | Estado atual (Lido/Respondido) |
+| **Data Resposta** | Timestamp de transmissão da resposta |
+
+---
+
+## **Guia de Implementação**
+
+### **Configuração Passo a Passo**
+
+1. Crie ou abra um documento do Google Sheets
+2. Acesse o editor de scripts: **Extensões → Apps Script**
+3. Verifique se o runtime V8 está habilitado (veja seção de Configuração acima)
+4. Cole o código-fonte fornecido no editor
+5. Salve o projeto com um nome descritivo
+6. Atualize sua planilha para ativar o menu personalizado
+7. Conceda as permissões necessárias quando solicitado
+8. Comece a usar os recursos de automação através do menu personalizado
+
+---
+
+## **Modelo de Início Rápido**
+
+Para acelerar seu processo de configuração, um modelo de planilha pré-configurado está disponível para uso imediato.
+
+📥 **[Acessar Planilha Modelo](https://bit.ly/planilhaemailresponder)**
+
+Este modelo inclui colunas pré-formatadas e está otimizado para integração perfeita com o script de automação.
+
+---
+
+## **Boas Práticas**
+
+- **Revise antes de enviar**:  Sempre verifique o conteúdo da resposta antes de executar o comando de envio
+- **Sincronização regular**: Sincronize e-mails periodicamente para manter informações atualizadas
+- **Monitoramento de status**:  Verifique a coluna de status para rastrear o histórico de comunicação
+- **Backup de dados**:  Mantenha backups periódicos da sua planilha para segurança dos dados
+
+---
+
+## **Suporte & Contribuições**
+
+Para dúvidas, problemas ou sugestões de melhorias, entre em contato pelos canais apropriados. Contribuições que aprimorem funcionalidade, documentação ou experiência do usuário são bem-vindas. 
+
+---
+
+**Desenvolvido com ❤️ usando ferramentas de automação do Google Workspace**
