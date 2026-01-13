@@ -116,4 +116,4 @@ Para dúvidas, problemas ou sugestões de melhorias, entre em contato pelos cana
 
 ---
 
-**Desenvolvido com ❤️ usando ferramentas de automação do Google Workspace**
+**Desenvolvido por Sergio Paulo de Andrade**
